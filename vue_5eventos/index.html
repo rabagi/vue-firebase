@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Vue.js</title>
+</head>    
+<body>
+<hr>
+    <main>
+        <ul>
+            <li v-for="tarea in tareas">            
+               {{tarea}}
+            </li>
+        </ul>
+
+        <form v-on:submit.prevent="agregarTarea">
+             <input type="text" placeholder="Introduce tarea" v-model="nuevaTarea">
+            <input type="submit" value="Enviar tareas">
+        </form>
+       
+<hr>
+        <pre>{{$data}}</pre>    
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

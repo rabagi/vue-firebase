@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Vue.js</title>
+</head>    
+<body>
+    <main>
+
+        <!--Matriz-->
+        <!--<ul>
+            <li v-for="dia in laborales">{{dia}}</li>
+        </ul>-->
+        
+        <!--Matriz de objetos (collection)-->
+        <!--
+         <ul>
+            <li v-for="(tarea, index) in tareas">
+                {{index}}-{{tarea.nombre}} 
+                <small>({{tarea.prioridad}})</small> 
+            </li>
+        </ul>-->
+
+        <!--Objeto-->
+        <ul>
+            <li v-for="(value, key, index) in persona">            
+               {{index}} - {{key}}: {{value}}
+            </li>
+        </ul>
+
+        <pre>{{$data}}</pre>    
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

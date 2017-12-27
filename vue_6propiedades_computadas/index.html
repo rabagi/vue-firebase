@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<title>Vue.js</title>
+</head>    
+<body bgcolor="blue">
+<hr>
+    <main>
+        <h1>{{ mensajeAlreves }}</h1>
+        <h2>{{mensaje}}</h2>
+        <ul>
+            <li v-for="tarea in tareasPorAntiguedad">            
+               {{tarea.titulo}}
+            </li>
+        </ul>
+
+        <form  class="form-inline" v-on:submit.prevent="agregarTarea">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Introduce tarea" v-model="nuevaTarea" required>
+                
+            </div>
+            <input type="submit" class="btn btn-primary" value="Enviar tareas">
+        </form>
+       
+<hr>
+        <pre>{{$data}}</pre>    
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

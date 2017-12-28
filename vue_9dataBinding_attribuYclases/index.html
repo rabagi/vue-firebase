@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<title>Vue.js</title>
+<style>
+    li{
+        cursor: pointer;
+    }
+    .completado{
+        text-decoration: line-through;
+    }
+</style>    
+</head>    
+<body style="background-color: #ccc;">
+<hr>
+    <main>
+        
+        <h1>Tareas</h1>
+        <h2>{{ tareasCompletadas.length }}</h2>
+        <ul>
+            <li v-bind:class="{completado: tarea.completado}"
+                @click="completarTarea(tarea)"
+                v-for="tarea in tareas">            
+                {{tarea.titulo}}
+            </li>
+        </ul>
+        <hr>
+        <pre style="font-size: 10px">{{$data}}</pre>    
+    </main>
+    <hr>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

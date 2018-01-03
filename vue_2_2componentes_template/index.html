@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <title>Vue.js</title>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+        <!--4ta opcion se agrega inline-template-->
+        <elegir-ganador :listado="personas" inline-template>
+            <div>
+            <h1 v-if="ganador">El ganador es {{ganador}}</h1>
+            <!--4ta opcion-->
+            <template v-else>
+                <h1>Participantes</h1>
+                <ul>
+                    <li v-for="persona in listado">{{persona}}</li>
+                </ul>
+            </template>
+            <button class="btn btn-primary" @click="elegirGanador"> Elegir ganador</button>
+            </div>
+        </elegir-ganador>
+    
+    <hr>
+    <pre style="font-size: 10px">{{$data}}</pre>
+    </main>
+    <hr>
+
+    <!--3a opcion con template :) -->
+    <!--<template id="elegir-ganador-template">
+        <div>
+        <h1 v-if="ganador">El ganador es {{ganador}}</h1>
+        <template v-else>
+            <h1>Participantes</h1>
+            <ul>
+                <li v-for="persona in listado">{{persona}}</li>
+            </ul>
+        </template>
+        <button class="btn btn-primary" @click="elegirGanador"> Elegir ganador</button>
+        </div>
+    </template>-->
+
+
+    <!--segunda opcion : scrip :( -->
+    <!--<script type="text/template" id="elegir-ganador-template">
+        <div>
+        <h1 v-if="ganador">El ganador es {{ganador}}</h1>
+        <template v-else>
+            <h1>Participantes</h1>
+            <ul>
+                <li v-for="persona in listado">{{persona}}</li>
+            </ul>
+        </template>
+        <button class="btn btn-primary" @click="elegirGanador"> Elegir ganador</button>
+        </div>
+    </script>-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <title>Vue.js</title>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+    <candidato v-for="candidato in candidatos"
+                :nombre="candidato.name.first"
+                :correoe ="candidato.email"
+                :img="candidato.picture.medium"
+                :location="candidato.location"
+                >
+
+    </candidato>
+    <hr>
+    <pre style="font-size: 10px">{{$data}}</pre>
+    </main>
+
+    <template id="candidato-template">
+        <blockquote>
+            <img :src="img" align="right">
+            <h1>{{nombre}}</h1>
+            <h2>{{correoe}}</h2>
+            <ul>
+                <li v-for="(value, key, index) in location">
+                    {{value}}
+                </li>
+            </ul>
+            <hr>
+        </blockquote>   
+    </template>
+    <hr>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

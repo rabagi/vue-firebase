@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+     <link rel="stylesheet" href="css/main.css">
+    <title>Vue.js</title>
+  </head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+        <alerta tipo="alerta-exito" posicion="alerta-arriba-derecha">
+            <template slot="header">Todo ok</template>
+            <template>nuevo contenido de alerta</template>
+            <template slot="footer">Puedes continuar</template>
+        </alerta>
+
+        <alerta tipo="alerta-error" posicion="alerta-arriba-izquierda">
+            <template slot="header">Error</template>
+            <template>nuevo contenido de alerta</template>
+            <template slot="footer">no Puedes continuar</template>
+        </alerta>
+
+        <alerta tipo="alerta-advertencia" posicion="alerta-abajo-derecha">
+            <template slot="header">advertencia</template>
+            <template>nuevo contenido de alerta</template>
+            <template slot="footer">casi no Puedes continuar</template>
+        </alerta>
+
+    </main>   
+    <hr>    
+    <pre style="font-size: 10px">{{$data}}</pre>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+     <link rel="stylesheet" href="css/main.css">
+    <title>Vue.js</title>
+  </head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+        <mis-tareas :listado="tareas">
+            <template slot="tarea" scope="datos">
+                <li>{{datos.title}}</li>
+            </template>
+        </mis-tareas>
+
+        <mis-tareas :listado="tareas">
+            <template slot="tarea" scope="datos">
+                <h3>{{datos.title}}</h3>
+            </template>
+        </mis-tareas>
+
+        <pre style="font-size: 10px">{{$data}}</pre>
+    </main>   
+    <hr>        
+    <template id="mis-tareas-template">
+        <ul>
+            <slot name="tarea" v-for="tarea in listado" :title="tarea.titulo">
+            </slot>
+            <!--<li v-for="tarea in listado">
+                {{tarea.titulo}}
+            </li>-->
+        </ul>
+    </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

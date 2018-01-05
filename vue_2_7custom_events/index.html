@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+     <link rel="stylesheet" href="css/main.css">
+    <title>Vue.js</title>
+  </head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+        <button class="btn btn-success" @click="mostrarExito = true">Exito</button>
+        <button class="btn btn-danger" @click="mostrarError = true">Error</button>
+        <button class="btn btn-warning" @click="mostrarAdvertencia = true">Advertencia</button>
+        
+        <alerta @ocultar="mostrarExito = false" v-show="mostrarExito" tipo="alerta-exito" posicion="alerta-arriba-derecha">
+            <template slot="header">Todo ok</template>
+            <template>nuevo contenido de alerta</template>
+            <template slot="footer">Puedes continuar</template>
+        </alerta>
+
+        <alerta @ocultar="mostrarError = false" v-show="mostrarError" tipo="alerta-error" posicion="alerta-abajo-izquierda">
+            <template slot="header">Error</template>
+            <template>nuevo contenido de alerta</template>
+            <template slot="footer">no Puedes continuar</template>
+        </alerta>
+
+        <alerta @ocultar="mostrarAdvertencia = false" v-show="mostrarAdvertencia" tipo="alerta-advertencia" posicion="alerta-abajo-derecha">
+            <template slot="header">advertencia</template>
+            <template>nuevo contenido de alerta</template>
+            <template slot="footer">casi no Puedes continuar</template>
+        </alerta>
+        
+        <pre style="font-size: 10px">{{$data}}</pre>
+    </main>   
+    <hr>        
+    <template id="mis-tareas-template">
+        <ul>
+            <slot name="tarea" v-for="tarea in listado" :title="tarea.titulo">
+            </slot>
+            <!--<li v-for="tarea in listado">
+                {{tarea.titulo}}
+            </li>-->
+        </ul>
+    </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <title>Vue.js</title>
+  </head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+        <button class="btn btn-primary" @click="seleccionado = 'lista-tareas'">Tareas</button>
+        <button class="btn btn-default" @click="seleccionado = 'contacto'">Contacto</button>
+        <button class="btn btn-success" @click="seleccionado = 'bio'">Biografia</button>
+        
+        <component :is="seleccionado">
+        </component>
+        <!--<lista-tareas></lista-tareas>
+        <contacto></contacto>
+        <bio></bio>      -->
+
+    <hr>
+        <pre style="font-size: 10px">{{$data}}</pre>
+    </main>            
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

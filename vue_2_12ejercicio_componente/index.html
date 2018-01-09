@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <title>Vue.js</title>
+  </head>
+
+<body style="background-color: #ccc;">
+    <hr>
+    <main>
+    <usuarios>
+        <h1>Usuarios de mi startup</h1>
+    </usuarios>
+
+    <hr>
+        <pre style="font-size: 10px">{{$data}}</pre>
+    </main>            
+    <template id="usuarios-template">
+        <div>
+            <section class="cabecera">
+                <slot></slot>
+                <input class="form-control" type="search" placeholder="filtrar usuarios" v-model="busqueda">
+            </section>
+            <hr>
+            <section class="row">
+                <usuario :datos="usuario" v-for="usuario in filtrarUsuarios" :key="usuario.id">{{usuario}}</usuario>
+            </section>
+        </div>
+    </template> 
+
+    <template id="usuario-template">
+            <div class="card card-outline-primary" style="width: 15rem;">
+                <img class="card-img-top" :src="datos.foto" :alt="datos.nombre">
+                <div class="card-block">
+                    <h2 class="card-title">{{datos.nombre}}</h2>
+                    <small class="card-text">{{datos.correoe}}</small>
+                </div>
+            </div>                
+        
+    </template>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

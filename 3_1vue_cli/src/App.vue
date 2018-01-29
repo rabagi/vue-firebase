@@ -24,7 +24,7 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Test desde curso  vue y firebase'
+      msg: 'Test desde curso  vue y firebase :D XD'
     }
   }
 }

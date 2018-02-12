@@ -1,6 +1,6 @@
 # 3_2single_file_comp
 
-> 3.2 vue
+> A Vue.js project
 
 ## Build Setup
 

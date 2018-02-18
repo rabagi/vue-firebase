@@ -1,12 +1,14 @@
-<template>
-    <section v-if="tipo='section'">
-        <slot></slot>
-    </section>
-</template>
 
 <script>
     export default {
-        props : ['tipo']
+        props : ['tipo'],
+        render(createElement){
+            return createElement(
+                this.tipo,
+                this.$slots.default,
+            )
+        }
+
     }
 </script>
 

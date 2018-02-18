@@ -1,8 +1,9 @@
 <template>
   <div>
-    <elemento tipo="section">
-      Hola mundo
-    </elemento>
+    <elemento tipo="main">Hola mundo main</elemento>
+    <elemento tipo="section">Hola mundo section</elemento>
+    <elemento tipo="div">Hola mundo div</elemento>
+    <elemento tipo="footer">Hola mundo footer</elemento>
   </div>
 </template>
 

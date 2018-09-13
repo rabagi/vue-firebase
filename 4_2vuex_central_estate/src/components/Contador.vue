@@ -8,7 +8,7 @@
 
 <script>
     export default{
-        props:['cantidad'],
+       // props:['cantidad'],
         methods:{
             aumentar(){
                 //this.$emit('aumentar');

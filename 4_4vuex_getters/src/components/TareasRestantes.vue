@@ -15,7 +15,7 @@
       //      }
       //  }
 
-        computed: mapGetters(['tareasCompletadas']);
+        computed: mapGetters(['tareasCompletadas'])
 
     }
 </script>
